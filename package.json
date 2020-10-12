@@ -1,0 +1,11 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/joey-lucky/leetcode.git",
+  "author": "joey <273179370@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "node": "^14.13.1"
+  }
+}
