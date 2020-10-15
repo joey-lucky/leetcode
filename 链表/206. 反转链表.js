@@ -16,5 +16,5 @@ var reverseList = function (head) {
     return res;
 };
 
-let node = ListNodeUtils.create([1, 2, 3, 4, 5]);
-console.log(ListNodeUtils.toString(reverseList(node)))
+let node = ListNode.create([1, 2, 3, 4, 5]);
+console.log(reverseList(node).toString())
