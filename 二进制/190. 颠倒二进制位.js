@@ -17,11 +17,18 @@
      因此返回 3221225471 其二进制表示形式为 10111111111111111111111111111111 。
 */
 /**
+ * 分治合并
+ *
+ * 1、分成2组，每组16位，左右交换
+ * 2、分成4组，每组8位，左右交换
+ * 3、分成8组，每组4位，左右交换
+ * 4、分成16组，每组2位，左右交换
+ *
  * @param {number} n - a positive integer
  * @return {number} - a positive integer
  */
-var reverseBits = function (n) {
-    n = (n>>> 16) | (n << 16);
+var reverseBits = function(n) {
+    n = (n >>> 16) | (n << 16);
     n = ((n & 0xff00ff00) >>> 8) | ((n & 0x00ff00ff) << 8);
     n = ((n & 0xf0f0f0f0) >>> 4) | ((n & 0x0f0f0f0f) << 4);
     n = ((n & 0xcccccccc) >>> 2) | ((n & 0x33333333) << 2);
