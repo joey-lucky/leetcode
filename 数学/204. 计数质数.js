@@ -7,26 +7,17 @@
  * @return {number}
  */
 var countPrimes = function (n) {
-    let start = 2;
-    let primeList = [];
-    while (start < n) {
-        if (start === 2) {
-            primeList.push(start);
-        } else {
-            let isPromise = true;
-            for (let prime of primeList) {
-                if (start % prime === 0) {
-                    isPromise = false;
-                    break;
-                }
-            }
-            if (isPromise) {
-                primeList.push(start);
+    const isPrime = new Array(n).fill(1);
+    let ans = 0;
+    for (let i = 2; i < n; ++i) {
+        if (isPrime[i] === 1) {
+            ans += 1;
+            for (let j = i * i; j < n; j += i) {
+                isPrime[j] = 0;
             }
         }
-        start++;
     }
-    return primeList.length;
+    return ans;
 };
 
-console.log(countPrimes(499979))
+console.log(countPrimes(4999799))
